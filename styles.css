@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  background: #14171c;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #fff;
+}
+.scoreboard-flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 550px;
+  background: #14171c;
+  position: relative;
+  min-width: 900px;
+}
+.team-column {
+  display: flex; flex-direction: column; align-items: center;
+  margin-top: 60px; width: 270px;
+}
+.logo-edit {
+  position: relative;
+  width: 82px; height: 82px;
+  border-radius: 50%; background: white; margin-bottom: 13px;
+  box-shadow: 0 3px 16px #0008;
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-edit img { width: 74px; height: 74px; object-fit: contain; border-radius:50%;}
+.logo-edit input[type="file"] {
+  position: absolute; left:0;top:0;width:100%;height:100%;opacity:0; cursor:pointer;
+}
+.team-name-input {
+  text-align: center;
+  font-size: 1.3em;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #2BC2FF;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  color: #2BC2FF;
+  outline: none;
+  max-width: 90%;
+}
+.teamB-color, #labelB, .teamB-col .team-name-input { color: #F6E26C; border-bottom: 2px solid #F6E26C;}
+.teamA-color, #labelA, .teamA-col .team-name-input { color: #2BC2FF;}
+.big { font-size: 4.3em; font-family: 'Oswald', 'Segoe UI', Arial, sans-serif; font-weight: 800; }
+.foul-ctrl-row { margin: 10px 0 0 0; display: flex; align-items: center; gap: 9px;}
+.foul-ctrl-row button {
+  font-size: 1.5em; width: 36px; height: 36px; border: none;
+  border-radius: 50%; background: #374052; color: #fff; font-weight: 700;
+  cursor: pointer; box-shadow: 0px 2px 5px #2224;
+  transition: background 0.15s;
+}
+.foul-ctrl-row button:hover { background: #60f0f0; color: #111;}
+.foul-label-card {
+  display: flex; flex-direction: column; align-items: center; background: #191d28; border-radius: 13px; padding: 5px 13px;
+  border: 3px solid #2BC2FF; min-width: 59px;
+}
+.teamB-col .foul-label-card { border-color: #F6E26C }
+.foul-label { font-size: 0.93em; opacity: 0.9;}
+.foul-count { font-size: 1.7em; font-weight: 800; }
+.add-player-row {margin-top:15px;display:flex;gap:5px;}
+.add-player-row input {flex:1;padding:6px 7px; border-radius:7px;outline:none;border:1.2px solid #ffd564;}
+.add-player-row button {padding:6px 15px;font-size:1em;border-radius:7px;border:none;background:#2BC2FF;color:#191d28;font-weight:700;}
+.add-player-row button:hover {background:#191d28;color:#2BC2FF;}
+.player-list { margin-top:8px; display: flex; flex-wrap: wrap; gap:7px;}
+.player-chip {
+  background: #f6f7f9; color: #272b39; border-radius: 13px; padding: 4px 13px; font-size: 1.09em;
+  display: flex; align-items:center; gap:7px; box-shadow:0 1px 6px #2221;
+  margin-bottom: 2px;
+}
+.player-chip .score {margin-left:7px; color:#e86116; font-weight:bold;font-size:1.12em;}
+.player-chip button {
+  border: none; background: #e74c3c; color: white; border-radius: 8px;
+  font-size:1em; padding:1px 9px; cursor:pointer; margin-left:1px;
+}
+.player-chip button:hover {background:#c0392b;}
+
+.center-panel {
+  display: flex; flex-direction: column; align-items: center; margin: 0 45px; margin-top: 26px; min-width:330px;
+}
+.big-timer {
+  font-size: 3.3em; font-family: 'Oswald', Arial, sans-serif;
+  letter-spacing: 0.11em; background: #000c; padding: 12px 70px 12px 70px;
+  border-radius: 1.2em; margin-bottom: 18px; font-weight: 700;
+}
+.period-circle {
+  border: 5px solid #26e1d4; border-radius: 50%; padding: 24px 38px;
+  text-align: center; background: #000a;
+  box-shadow: 0 2px 24px #26e1d470; width: 156px; height: 156px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  margin-bottom: 9px;
+}
+.period-label { font-size: 1.32em; letter-spacing: 0.04em; opacity: 0.85;}
+.period-number { font-size: 3.6em; font-weight: 800; }
+.period-ctrl-row, .timer-ctrl-row, .game-ctrl-row {
+  display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 8px;
+}
+.period-ctrl-row button, .timer-ctrl-row button, .game-ctrl-row button {
+  background: #232e4f; color: #fff; border: none; border-radius: 8px;
+  padding: 8px 20px; font-size: 1.2em; font-weight: bold; cursor: pointer;
+  box-shadow: 0 2px 12px #0003; transition: background 0.17s;
+}
+.period-ctrl-row button:hover, .timer-ctrl-row button:hover, .game-ctrl-row button:hover {
+  background: #2BC2FF; color: #15131d;
+}
+.game-ctrl-row button#startGameBtn { background: #2BC2FF; color:#15212c;}
+.game-ctrl-row button#resetBtn { background: #F6E26C; color: #331d2e;}
+.game-ctrl-row button#endGameBtn { background: #fb5656; color:#331d2e;}
+.game-ctrl-row button:hover { opacity: .8;}
+
+.scores-ctrls {
+  margin: 24px auto 0 auto; display: flex; justify-content: center; align-items: center; gap: 90px;
+  font-size: 1.1em;
+}
+.score-controls {
+  display: flex; gap: 8px; align-items: center;
+}
+.score-controls span {
+  font-weight: 700; color: #2BC2FF; margin-right: 7px; letter-spacing: 0.08em; font-size:1.07em;
+}
+.score-controls:last-child span { color: #F6E26C; }
+.score-controls button {
+  border: none; border-radius: 7px; background: #232e4f; color: #fff; font-weight: bold;
+  font-size: 1.02em; padding: 8px 15px; margin: 0 0.8px; cursor: pointer;
+  transition: background 0.16s; box-shadow: 0 1px 7px #2bc2ff45;
+}
+.score-controls button:hover { background:#2BC2FF; color: #1a1c1e;}
+.score-controls select {
+  padding: 6px 11px; border-radius: 7px; background: #f4f6fc; font-size: 0.98em;
+  margin-left: 7px; color: #323a53;
+}
+
+.history-panel {
+  margin-top:20px;background:rgba(255,255,255,0.04);border-radius:10px;
+  padding:8px 7px 4px 8px;width:96%;box-shadow:0 1.5px 7px #ffecb390;
+  min-height:38px;max-height:210px;overflow-y:auto;color:#e0d0b8;
+  font-size:1em;
+}
+.history-panel h3 { color:#2BC2FF;text-align:center;margin:5px 0;}
+.clear-history {
+  width:80%;margin:7px 10% 2px 10%;background:#e74c3c;color:#fff;border-radius:7px;
+  font-weight:600;padding:4px 0;border:none;transition:background 0.15s;cursor:pointer;
+}
+.clear-history:hover { background: #b8291c; }
+.winner-msg { color:#ffd700;text-shadow:1px 1px 11px #111; font-weight:bold;min-height:28px;text-align:center; }
+
+@media (max-width: 1100px) {
+  .scoreboard-flex {min-width:700px;}
+  .center-panel {margin: 0 3vw;}
+}
+@media (max-width: 800px) {
+  .scoreboard-flex { flex-direction: column; align-items: center; min-width: unset;}
+  .center-panel {margin: 0}
+  .team-column {margin: 22px auto;}
+  .scores-ctrls {flex-direction: column; gap: 18px;}
+}

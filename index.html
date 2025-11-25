@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basketball Scoreboard Pro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="scoreboard-flex">
+
+    <!-- Team 1 -->
+    <div class="team-column teamA-col">
+      <div class="logo-edit">
+        <img id="logoA" src="logo1.png" alt="Team 1" />
+        <input type="file" id="uploadLogoA" accept="image/*" />
+      </div>
+      <input id="teamAName" class="team-name-input teamA-color" value="TEAM 1" maxlength="18" />
+      <div class="team-score big teamA-color" id="scoreA">0</div>
+      <div class="foul-ctrl-row">
+        <button onclick="decrementFouls('A')">-</button>
+        <div class="foul-label-card">
+          <div class="foul-label">FOULS</div>
+          <div class="foul-count" id="foulsA">0</div>
+        </div>
+        <button onclick="incrementFouls('A')">+</button>
+      </div>
+      <div class="add-player-row">
+        <input id="addPlayerA" type="text" maxlength="18" placeholder="Add player" />
+        <button onclick="addPlayer('A')">+</button>
+      </div>
+      <div id="playerAScores" class="player-list"></div>
+    </div>
+
+    <!-- Center: Timer & Quarter -->
+    <div class="center-panel">
+      <div class="big-timer" id="commonTimer">10:00</div>
+      <div class="period-circle">
+        <div class="period-label">QUARTER</div>
+        <div class="period-number" id="quarterNum">1</div>
+      </div>
+      <div class="period-ctrl-row">
+        <button onclick="changeQuarter(-1)">&#8592;</button>
+        <button onclick="changeQuarter(1)">&#8594;</button>
+      </div>
+      <div class="timer-ctrl-row">
+        <button onclick="startTimer()">▶️</button>
+        <button onclick="pauseTimer()">⏸️</button>
+        <button onclick="resetTimer()">⟳</button>
+      </div>
+      <div class="timeout-row" style="margin: 14px 0;">
+        <button id="timeoutA" onclick="callTimeout('A')">Timeout Team 1</button>
+        <span id="timeoutTimer" style="font-size:1.3em;color:#F6E26C;display:none;margin:0 8px;">01:30</span>
+        <button id="timeoutB" onclick="callTimeout('B')">Timeout Team 2</button>
+      </div>
+      <div class="game-ctrl-row">
+        <button id="startGameBtn" onclick="startGame()">START</button>
+        <button id="endGameBtn" onclick="endGame()">END</button>
+        <button id="resetBtn" onclick="resetScores()">RESET</button>
+      </div>
+      <div id="winnerMsg" class="winner-msg"></div>
+      <div class="history-panel">
+        <h3>Match History</h3>
+        <div id="historyPanel"></div>
+        <button onclick="clearHistory()" class="clear-history">Clear History</button>
+      </div>
+    </div>
+
+    <!-- Team 2 -->
+    <div class="team-column teamB-col">
+      <div class="logo-edit">
+        <img id="logoB" src="logo2.png" alt="Team 2" />
+        <input type="file" id="uploadLogoB" accept="image/*" />
+      </div>
+      <input id="teamBName" class="team-name-input teamB-color" value="TEAM 2" maxlength="18" />
+      <div class="team-score big teamB-color" id="scoreB">0</div>
+      <div class="foul-ctrl-row">
+        <button onclick="decrementFouls('B')">-</button>
+        <div class="foul-label-card">
+          <div class="foul-label">FOULS</div>
+          <div class="foul-count" id="foulsB">0</div>
+        </div>
+        <button onclick="incrementFouls('B')">+</button>
+      </div>
+      <div class="add-player-row">
+        <input id="addPlayerB" type="text" maxlength="18" placeholder="Add player" />
+        <button onclick="addPlayer('B')">+</button>
+      </div>
+      <div id="playerBScores" class="player-list"></div>
+    </div>
+  </div>
+
+  <div class="scores-ctrls">
+    <div class="score-controls">
+      <span id="labelA">TEAM 1</span>
+      <button onclick="changeScore('A', 1)">+1</button>
+      <button onclick="changeScore('A', 2)">+2</button>
+      <button onclick="changeScore('A', 3)">+3</button>
+      <button onclick="changeScore('A', -1)">-1</button>
+      <select id="selPlayerA"></select>
+    </div>
+    <div style="width:85px"></div>
+    <div class="score-controls">
+      <span id="labelB">TEAM 2</span>
+      <button onclick="changeScore('B', 1)">+1</button>
+      <button onclick="changeScore('B', 2)">+2</button>
+      <button onclick="changeScore('B', 3)">+3</button>
+      <button onclick="changeScore('B', -1)">-1</button>
+      <select id="selPlayerB"></select>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
