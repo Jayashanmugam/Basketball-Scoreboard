@@ -82,6 +82,7 @@ Option to clear history
 ├── script.js
 └── (images/logos if any)
 
+
 index.html – Scoreboard UI Structure
 
 Contains the full layout of the scoreboard, UI controls, timer, history panel, player lists, and event button hooks.
